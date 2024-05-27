@@ -1,9 +1,9 @@
+/** @format */
+
 import router from './Routes/routes';
 import { RouterProvider } from 'react-router-dom';
-function App() {
-  const a = 'y';
-  const name = 'yogesh';
 
+function App() {
   return (
     <div>
       <RouterProvider router={router} />

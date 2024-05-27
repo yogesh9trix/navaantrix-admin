@@ -1,0 +1,10 @@
+.prettierrc
+node_modules
+dist
+build
+package.json
+package-lock.json
+README.md 
+.gitignore
+.eslintrc.json
+.eslintrc
