@@ -1,0 +1,9 @@
+/** @format */
+
+/* below lines are necessory in mui, removes bug */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
