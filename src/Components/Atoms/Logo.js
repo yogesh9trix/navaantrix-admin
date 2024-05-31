@@ -1,12 +1,19 @@
 /** @format */
 
 import { Box, Typography } from '@mui/material';
-import EqualizerIcon from '@mui/icons-material/Equalizer';
+import Symbol from '../../Assets/SVG/symbol';
 
 function Logo() {
   return (
-    <Box sx={{ display: 'flex', gap: 1, justifyContent: 'center' }}>
-      <EqualizerIcon fontSize="medium" sx={{ color: 'yellow' }} />
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <Symbol width="22" height="22" />
       <Typography
         sx={{
           fontFamily: 'Hachi',

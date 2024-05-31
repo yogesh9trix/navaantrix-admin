@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { Box, Divider, Drawer, Typography } from '@mui/material';
 import { useGlobalContext } from '../../context';
 import Logo from '../Atoms/Logo';
+import SidebarMenu from '../Molecules/SidebarMenu';
 
 const drawerWidth = 250;
 function CustomSidebar() {
@@ -19,7 +20,7 @@ function CustomSidebar() {
         anchor="left"
         open={isDrawerOpen}
         sx={{
-          display: { xs: 'block', md: 'none' },
+          display: { xs: 'block' },
           '& .MuiDrawer-paper': {
             width: drawerWidth,
           },
@@ -38,7 +39,7 @@ function CustomSidebar() {
             <Logo />
             <Divider />
           </Box>
-          <Box component="span"></Box>
+          <SidebarMenu />
         </Box>
       </Drawer>
     </Box>

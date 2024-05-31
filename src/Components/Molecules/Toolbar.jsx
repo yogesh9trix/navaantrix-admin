@@ -68,14 +68,12 @@ export function DesktopToolbar() {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1, alignContent: 'flex-start' }}>
-        <Logo />
-      </Box>
+      <SidebarButton />
       <Box
         sx={{
           flexGrow: 2,
           display: { xs: 'none', md: 'flex' },
-          justifyContent: 'flex-start',
+          justifyContent: 'center',
         }}
       >
         {MENU.map(({ displayText, linkText }, index) => (

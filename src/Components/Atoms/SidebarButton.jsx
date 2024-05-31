@@ -15,7 +15,6 @@ function SidebarButton() {
       aria-controls="menu-appbar"
       aria-label="menu"
       sx={{
-        display: { md: 'none' },
         mr: 2,
       }}
     >
