@@ -15,15 +15,10 @@ import Logo from '../Atoms/Logo';
 import SidebarButton from '../Atoms/SidebarButton';
 import { MENU } from '../../Constants/PAGES_MENU';
 import { NavLink } from 'react-router-dom';
-
-const settings = [
-  'Profile',
-  `What's New`,
-  'Feedback',
-  'Help',
-  'About',
-  'Logout',
-];
+import ThemeSwitch from '../Atoms/Theme/ThemeSwitch';
+import { THEMES } from '../../Constants/commons';
+import { useGlobalContext } from '../../context';
+import ProfileMenu from './ProfileMenu/ProfileMenu';
 
 export function MobileToolbar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -46,7 +41,7 @@ export function MobileToolbar() {
             <Avatar alt="Yogesh Kakde"></Avatar>
           </IconButton>
         </Tooltip>
-        <SettingsMenu
+        <ProfileMenu
           anchorElUser={anchorElUser}
           handleCloseUserMenu={handleCloseUserMenu}
         />
@@ -57,7 +52,7 @@ export function MobileToolbar() {
 
 export function DesktopToolbar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+  const { setActiveTheme, activeTheme } = useGlobalContext();
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -101,13 +96,23 @@ export function DesktopToolbar() {
           </NavLink>
         ))}
       </Box>
+      <Box sx={{ flexGrow: 1 }}>
+        <ThemeSwitch
+          onChange={(ev) => {
+            const theme = ev.target.checked ? THEMES.DARK : THEMES.LIGHT;
+            setActiveTheme(theme);
+            localStorage.setItem('theme', theme);
+          }}
+          checked={activeTheme === THEMES.DARK}
+        />
+      </Box>
       <Box sx={{ flexGrow: 0 }}>
         <Tooltip title="settings">
           <IconButton size="small" onClick={handleOpenUserMenu}>
             <Avatar alt="Yogesh Kakde"></Avatar>
           </IconButton>
         </Tooltip>
-        <SettingsMenu
+        <ProfileMenu
           anchorElUser={anchorElUser}
           handleCloseUserMenu={handleCloseUserMenu}
         />
@@ -115,34 +120,3 @@ export function DesktopToolbar() {
     </>
   );
 }
-
-const SettingsMenu = function (props) {
-  const { anchorElUser, handleCloseUserMenu } = props;
-
-  return (
-    <Menu
-      id="menu-appbar"
-      sx={{ mt: '45px', fontFamily: 'Inter' }}
-      anchorEl={anchorElUser}
-      anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      keepMounted
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      open={Boolean(anchorElUser)}
-      onClose={handleCloseUserMenu}
-    >
-      {settings.map((setting) => (
-        <MenuItem key={setting} onClick={handleCloseUserMenu}>
-          <Typography sx={{ fontFamily: 'Inter' }} textAlign="center">
-            {setting}
-          </Typography>
-        </MenuItem>
-      ))}
-    </Menu>
-  );
-};
