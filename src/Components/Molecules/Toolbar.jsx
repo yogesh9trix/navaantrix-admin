@@ -1,23 +1,11 @@
 /** @format */
 
 import React from 'react';
-import {
-  Avatar,
-  Box,
-  IconButton,
-  Tooltip,
-  Menu,
-  MenuItem,
-  Typography,
-  Button,
-} from '@mui/material';
-import Logo from '../Atoms/Logo';
+import { Avatar, Box, IconButton, Tooltip, Button } from '@mui/material';
+import { NavLink } from 'react-router-dom';
+import { useTheme } from '@mui/material/';
 import SidebarButton from '../Atoms/SidebarButton';
 import { MENU } from '../../Constants/PAGES_MENU';
-import { NavLink } from 'react-router-dom';
-import ThemeSwitch from '../Atoms/Theme/ThemeSwitch';
-import { THEMES } from '../../Constants/commons';
-import { useGlobalContext } from '../../context';
 import ProfileMenu from './ProfileMenu/ProfileMenu';
 
 export function MobileToolbar() {
@@ -52,7 +40,8 @@ export function MobileToolbar() {
 
 export function DesktopToolbar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const { setActiveTheme, activeTheme } = useGlobalContext();
+  const theme = useTheme();
+
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -76,14 +65,23 @@ export function DesktopToolbar() {
             key={index}
             to={linkText}
             style={({ isActive }) => {
-              return {
-                color: isActive ? 'black' : 'white',
-                textDecoration: 'none',
-              };
+              const isDark = theme.palette.mode === 'dark';
+              const style = { textDecoration: 'none' };
+              if (isDark) {
+                style['color'] = isActive
+                  ? theme.palette.grey[100]
+                  : theme.palette.grey[500];
+              } else {
+                style['color'] = isActive
+                  ? theme.palette.grey[100]
+                  : theme.palette.grey[900];
+              }
+              return style;
             }}
           >
             <Button
               onClick={() => {}}
+              size="small"
               sx={{
                 my: 2,
                 color: 'inherit',
@@ -95,16 +93,6 @@ export function DesktopToolbar() {
             </Button>
           </NavLink>
         ))}
-      </Box>
-      <Box sx={{ flexGrow: 1 }}>
-        <ThemeSwitch
-          onChange={(ev) => {
-            const theme = ev.target.checked ? THEMES.DARK : THEMES.LIGHT;
-            setActiveTheme(theme);
-            localStorage.setItem('theme', theme);
-          }}
-          checked={activeTheme === THEMES.DARK}
-        />
       </Box>
       <Box sx={{ flexGrow: 0 }}>
         <Tooltip title="settings">

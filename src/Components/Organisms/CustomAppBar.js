@@ -6,7 +6,7 @@ import { MobileToolbar, DesktopToolbar } from '../Molecules/Toolbar';
 function CustomAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" color="secondary">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Box
