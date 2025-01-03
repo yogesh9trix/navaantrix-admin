@@ -126,7 +126,7 @@ select {
 .multi-select-wrapper {
   border: 1px dashed silver;
   border-radius: 4px;
-  padding: 8px;
+  padding: 16px;
   box-sizing: border-box;
 }
 

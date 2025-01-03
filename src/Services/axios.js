@@ -9,8 +9,8 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(interceptor, networkError);
 function interceptor(config) {
-  config.data['Client_Id'] = localStorage.getItem('clientID');
-  config.data['Domain_Id'] = localStorage.getItem('domainID');
+  config.data['Client_Id'] = '';
+  config.data['Domain_Id'] = '';
   return config;
 }
 
