@@ -1,0 +1,82 @@
+/** @format */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #008ffb;
+  --secondary-color: #feb019;
+  --input-background: #f1f1f1;
+  --subtitle-color: silver;
+  --btn-shadow: 3px 3px 5px silver;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #dbdbdb;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 0px;
+}
+
+/* font family */
+
+.inter-font {
+  font-family: 'Inter', sans-serif;
+}
+
+.poppins-font {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* font size */
+
+.font-size-12 {
+  font-size: 12px;
+}
+
+.btn-group {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.btn {
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+}
+.btn-default-size {
+  min-width: 100px;
+  height: 35px;
+}
+
+.btn:active {
+  border: 1px solid green;
+}
+.btn-primary {
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: var(--btn-shadow);
+}
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  box-shadow: none;
+  color: black;
+}
+.btn-secondary {
+  border: 1px solid silver;
+  background-color: unset;
+}
+.btn-secondary:hover {
+  background-color: silver;
+}

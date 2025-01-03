@@ -8,6 +8,7 @@ import { useGlobalContext } from './context';
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { blue, teal } from '@mui/material/colors';
 import { THEMES } from './Constants/commons';
+import './Style/common.css';
 
 function App() {
   const { activeTheme } = useGlobalContext();
