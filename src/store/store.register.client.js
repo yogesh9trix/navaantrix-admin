@@ -16,7 +16,7 @@ const initialState = {
   sourceId: {
     value: '',
     required: true,
-    placeholder: 'Source Id* (Numberic)',
+    placeholder: 'Source Id* (Numeric)',
     type: 'input',
     error: '',
   },
@@ -45,7 +45,7 @@ const initialState = {
     total: [],
     selected: [],
     required: true,
-    type: 'array',
+    type: 'select',
     error: '',
   },
 };
