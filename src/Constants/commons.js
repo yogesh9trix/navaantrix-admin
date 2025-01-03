@@ -1,4 +1,5 @@
 /** @format */
+
 import {
   AccountBox,
   FiberNew,
@@ -7,6 +8,9 @@ import {
   HelpCenter,
   Info,
   Settings,
+  Group,
+  PersonAdd,
+  Fingerprint,
 } from '@mui/icons-material/';
 export const THEMES = {
   DARK: 'DARK',
@@ -27,4 +31,14 @@ export const profileMenu = [
     linkText: '/settings',
   },
   { displayText: 'Logout', disabled: false, Icon: Logout },
+];
+
+export const MENU = [
+  { displayText: 'Organisation', linkText: 'organisation', Icon: Group },
+  { displayText: 'Add User', linkText: 'add-user', Icon: PersonAdd },
+  {
+    displayText: 'System Attribute',
+    linkText: 'system-attribute',
+    Icon: Fingerprint,
+  },
 ];

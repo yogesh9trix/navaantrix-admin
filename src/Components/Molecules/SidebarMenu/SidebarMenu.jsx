@@ -8,7 +8,7 @@ import {
   ListItemText,
   useTheme,
 } from '@mui/material';
-import { MENU } from '../../../Constants/PAGES_MENU';
+import { MENU } from '../../../Constants/commons';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 

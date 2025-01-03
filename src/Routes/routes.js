@@ -5,19 +5,19 @@ import {
   createRoutesFromElements,
   Route,
 } from 'react-router-dom';
-import Home from '../Components/Pages/Home/Home';
-import DrillDown from '../Components/Pages/Drilldown/DrillDown';
-import DataTree from '../Components/Pages/DataTree/DataTree';
 import Index from '../Components/Pages/Entry/Index';
 import LoginPage from '../Components/Pages/Login/Login.jsx';
+import Organisation from '../Components/Pages/Organisation/Organisation.jsx';
+import AddUser from '../Components/Pages/AddUser/AddUser.jsx';
+import SystemAttribute from '../Components/Pages/SystemAttribute/SystemAttribute.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Index />}>
-        <Route path="/home" element={<Home />} />
-        <Route path="/drill-down" element={<DrillDown />} />
-        <Route path="/data-tree" element={<DataTree />} />
+        <Route path="/organisation" element={<Organisation />} />
+        <Route path="/add-user" element={<AddUser />} />
+        <Route path="/system-attribute" element={<SystemAttribute />} />
       </Route>
       <Route path="/login" element={<LoginPage />} />
     </>

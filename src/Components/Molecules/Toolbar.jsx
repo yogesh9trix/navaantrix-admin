@@ -5,7 +5,7 @@ import { Avatar, Box, IconButton, Tooltip, Button } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import { useTheme } from '@mui/material/';
 import SidebarButton from '../Atoms/SidebarButton';
-import { MENU } from '../../Constants/PAGES_MENU';
+import { MENU } from '../../Constants/commons';
 import ProfileMenu from './ProfileMenu/ProfileMenu';
 
 export function MobileToolbar() {

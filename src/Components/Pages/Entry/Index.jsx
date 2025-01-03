@@ -10,7 +10,7 @@ function Index() {
   const location = useLocation();
   useEffect(() => {
     if (location.pathname === '/') {
-      navigate('/home');
+      navigate('/organisation');
     }
   }, [location]);
 
