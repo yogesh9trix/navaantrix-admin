@@ -14,12 +14,8 @@ function Logo() {
       }}
     >
       <Symbol width="22" height="22" />
-      <Typography
-        sx={{
-          fontFamily: 'Hachi',
-        }}
-      >
-        DataRipper
+      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.9rem' }}>
+        Navaantrix BI Admin
       </Typography>
     </Box>
   );

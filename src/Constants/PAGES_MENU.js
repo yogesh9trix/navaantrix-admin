@@ -1,11 +1,15 @@
 /** @format */
 
-import { Home, ImportExport, ViewColumn } from '@mui/icons-material';
+import { Group, PersonAdd, Fingerprint } from '@mui/icons-material';
 
 const MENU = [
-  { displayText: 'Home', linkText: 'home', icon: <Home /> },
-  { displayText: 'Drill Down', linkText: 'drill-down', icon: <ImportExport /> },
-  { displayText: 'Data Tree', linkText: 'data-tree', icon: <ViewColumn /> },
+  { displayText: 'Organisation', linkText: 'home', Icon: Group },
+  { displayText: 'Add User', linkText: 'drill-down', Icon: PersonAdd },
+  {
+    displayText: 'System Attribute',
+    linkText: 'data-tree',
+    Icon: Fingerprint,
+  },
 ];
 
 export { MENU };

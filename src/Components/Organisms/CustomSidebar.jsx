@@ -1,10 +1,10 @@
 /** @format */
 
 import { useEffect } from 'react';
-import { Box, Divider, Drawer, Typography } from '@mui/material';
+import { Box, Divider, Drawer } from '@mui/material';
 import { useGlobalContext } from '../../context';
 import Logo from '../Atoms/Logo';
-import SidebarMenu from '../Molecules/SidebarMenu';
+import SidebarMenu from '../Molecules/SidebarMenu/SidebarMenu';
 
 const drawerWidth = 250;
 function CustomSidebar() {
